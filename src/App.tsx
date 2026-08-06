@@ -26,6 +26,11 @@ function App() {
   return (
     <div className="relative w-full bg-bg min-h-screen text-text-primary overflow-x-hidden selection:bg-text-primary selection:text-bg">
       
+      {/* Global Blueprint Grid Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03]" 
+           style={{ backgroundImage: "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)", backgroundSize: "40px 40px" }} 
+      />
+
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       
       {!isLoading && (

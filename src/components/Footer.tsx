@@ -1,12 +1,15 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Hls from "hls.js";
+import { motion } from "framer-motion";
+import useMagnetic from "../hooks/useMagnetic";
 
 const MARQUEE_TEXT = Array(10).fill("BUILDING THE FUTURE • ").join("");
 
 export default function Footer() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
+  const magneticButton = useMagnetic(0.15);
 
   useEffect(() => {
     // Marquee Animation
@@ -65,13 +68,19 @@ export default function Footer() {
         </div>
 
         {/* CTA Button */}
-        <div className="mb-16 md:mb-24">
-          <a href="mailto:hello@pixxelu.com" className="group relative inline-flex items-center justify-center rounded-full">
-            <span className="absolute inset-[-2px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300" />
+        <div className="mb-16 md:mb-24 relative">
+          <div className="absolute inset-[-40px] bg-[#0d99ff]/10 blur-[50px] rounded-full pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-700" />
+          <motion.a 
+            href="mailto:hello@pixxelu.com" 
+            ref={magneticButton.ref as any}
+            style={{ x: magneticButton.x, y: magneticButton.y }}
+            className="group relative inline-flex items-center justify-center rounded-full z-10"
+          >
+            <span className="absolute inset-[-2px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300 shadow-[0_0_30px_rgba(13,153,255,0.3)]" />
             <span className="relative flex items-center justify-center bg-surface border border-stroke group-hover:border-transparent rounded-full px-8 py-4 md:px-12 md:py-6 text-xl md:text-3xl font-display italic text-text-primary backdrop-blur-md transition-colors">
               hello@pixxelu.com <span className="ml-3 text-base">↗</span>
             </span>
-          </a>
+          </motion.a>
         </div>
       </div>
     </footer>

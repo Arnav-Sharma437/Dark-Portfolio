@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import Hls from "hls.js";
+import { motion } from "framer-motion";
+import useMagnetic from "../hooks/useMagnetic";
 
 const ROLES = ["Design", "Development", "Performance", "Strategy"];
 
@@ -8,6 +10,9 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  
+  const magneticButton1 = useMagnetic(0.2);
+  const magneticButton2 = useMagnetic(0.2);
 
   useEffect(() => {
     // GSAP Entrance
@@ -76,13 +81,30 @@ export default function Hero() {
       {/* Main Content Layer */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto pt-20">
         
-        <div className="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">
+        {/* Figma Tag */}
+        <div className="absolute top-0 left-4 md:-left-12 -translate-y-8 flex items-center gap-2 px-2 py-1 bg-[#0d99ff] rounded-[4px] opacity-0 animate-[fadeIn_0.5s_ease-out_1s_forwards]">
+          <span className="text-[10px] text-white font-mono tracking-wider">◈ Hero Component</span>
+        </div>
+
+        <div className="blur-in relative inline-block text-xs text-muted uppercase tracking-[0.3em] mb-8">
           DIGITAL AGENCY
+          {/* Measurement line */}
+          <div className="absolute top-1/2 -right-16 w-12 h-px bg-[#0d99ff]/50 border-r border-[#0d99ff]/50" />
+          <div className="absolute top-1/2 -left-16 w-12 h-px bg-[#0d99ff]/50 border-l border-[#0d99ff]/50" />
         </div>
         
-        <h1 className="name-reveal text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6">
-          Pixxelu
-        </h1>
+        <div className="relative group/title">
+          <h1 className="name-reveal text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6 transition-all duration-500 hover:text-white hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+            Pixxelu
+          </h1>
+          {/* Hover selection box */}
+          <div className="absolute inset-[-10px] border border-[#0d99ff] opacity-0 group-hover/title:opacity-100 transition-opacity pointer-events-none rounded-lg flex items-start justify-start">
+             <div className="absolute -top-1 -left-1 w-2 h-2 bg-white border border-[#0d99ff]" />
+             <div className="absolute -top-1 -right-1 w-2 h-2 bg-white border border-[#0d99ff]" />
+             <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white border border-[#0d99ff]" />
+             <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-white border border-[#0d99ff]" />
+          </div>
+        </div>
         
         <div className="blur-in text-xl md:text-3xl text-text-primary mb-6 flex items-center justify-center gap-2 font-body">
           <span>A</span>
@@ -100,22 +122,35 @@ export default function Hero() {
         </p>
         
         {/* CTA Buttons */}
-        <div className="blur-in flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="blur-in flex flex-col sm:flex-row items-center justify-center gap-4 relative">
+          {/* Glassmorphic panel behind buttons */}
+          <div className="absolute inset-[-20px] bg-white/5 backdrop-blur-2xl rounded-full opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+          
           {/* See Works (Solid) */}
-          <a href="#work" className="group relative inline-flex items-center justify-center rounded-full text-sm px-7 py-3.5 hover:scale-105 transition-all duration-300">
-            <span className="absolute inset-[-2px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300" />
+          <motion.a 
+            href="#work"
+            ref={magneticButton1.ref as any}
+            style={{ x: magneticButton1.x, y: magneticButton1.y }}
+            className="group relative inline-flex items-center justify-center rounded-full text-sm px-7 py-3.5 transition-all duration-300 z-10"
+          >
+            <span className="absolute inset-[-2px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300 shadow-[0_0_20px_rgba(137,170,204,0.4)]" />
             <span className="relative flex items-center justify-center w-full h-full bg-text-primary text-bg group-hover:bg-bg group-hover:text-text-primary rounded-full transition-colors duration-300 px-7 py-3.5 whitespace-nowrap font-medium">
               See Works
             </span>
-          </a>
+          </motion.a>
 
           {/* Reach out (Outlined) */}
-          <a href="#contact" className="group relative inline-flex items-center justify-center rounded-full text-sm px-7 py-3.5 hover:scale-105 transition-all duration-300 border-2 border-stroke hover:border-transparent bg-bg text-text-primary">
-            <span className="absolute inset-[-2px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300" />
+          <motion.a 
+            href="#contact"
+            ref={magneticButton2.ref as any}
+            style={{ x: magneticButton2.x, y: magneticButton2.y }}
+            className="group relative inline-flex items-center justify-center rounded-full text-sm px-7 py-3.5 transition-all duration-300 border-2 border-stroke hover:border-transparent bg-bg text-text-primary z-10"
+          >
+            <span className="absolute inset-[-2px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300 shadow-[0_0_20px_rgba(137,170,204,0.4)]" />
             <span className="relative flex items-center justify-center w-full h-full bg-bg rounded-full px-7 py-3.5 whitespace-nowrap font-medium">
               Reach out...
             </span>
-          </a>
+          </motion.a>
         </div>
       </div>
 

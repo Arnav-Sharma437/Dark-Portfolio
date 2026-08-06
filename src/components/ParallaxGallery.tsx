@@ -74,8 +74,17 @@ export default function ParallaxGallery() {
     <>
       <section ref={containerRef} className="relative w-full bg-bg h-[300vh] overflow-hidden">
         
+        {/* Floating Background Shapes */}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-[#0d99ff]/20 rounded-full animate-[spin_30s_linear_infinite]" />
+        <div className="absolute top-3/4 right-1/4 w-40 h-40 border border-[#0d99ff]/20 rotate-45" />
+        <div className="absolute top-1/2 left-1/2 w-px h-64 bg-gradient-to-b from-transparent via-[#0d99ff]/30 to-transparent -translate-x-[200px]" />
+        
         {/* Layer 1: Pinned Center */}
         <div ref={centerRef} className="absolute inset-0 h-screen w-full flex flex-col justify-center items-center text-center z-10 pointer-events-none px-4">
+          
+          <div className="absolute top-1/4 right-1/4 flex items-center gap-2 px-2 py-1 bg-[#0d99ff]/10 border border-[#0d99ff]/30 rounded-[4px] opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-auto cursor-default">
+            <span className="text-[10px] text-[#0d99ff] font-mono tracking-wider">Parallax Wrapper</span>
+          </div>
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-stroke" />
             <span className="text-xs text-muted uppercase tracking-[0.3em]">Process</span>

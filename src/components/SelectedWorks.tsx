@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const PROJECTS = [
   { id: 1, title: "Shopify E-Commerce", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" },
@@ -6,6 +6,71 @@ const PROJECTS = [
   { id: 3, title: "WordPress Headless", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" },
   { id: 4, title: "Webflow Corporate", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" },
 ];
+
+function TiltCard({ project, spanClass }: { project: typeof PROJECTS[0], spanClass: string }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className={`${spanClass} group relative bg-surface border border-stroke rounded-3xl overflow-hidden aspect-square md:aspect-auto md:h-[450px] cursor-pointer`}
+    >
+      {/* Base Image */}
+      <motion.img 
+        style={{ translateZ: "20px" }}
+        src={project.img} 
+        alt={project.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[0.25,0.1,0.25,1] group-hover:scale-110"
+      />
+      
+      {/* Halftone Overlay */}
+      <div 
+        className="absolute inset-0 opacity-20 mix-blend-multiply"
+        style={{ backgroundImage: "radial-gradient(circle, #000 1px, transparent 1px)", backgroundSize: "4px 4px" }}
+      />
+
+      {/* Hover Darken + Blur */}
+      <div className="absolute inset-0 bg-bg/70 opacity-0 group-hover:opacity-100 backdrop-blur-lg transition-all duration-500 flex items-center justify-center">
+        {/* Pill Label */}
+        <motion.div 
+          style={{ translateZ: "40px" }}
+          className="relative inline-flex items-center justify-center rounded-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[0.25,0.1,0.25,1]"
+        >
+          <span className="absolute inset-[-2px] rounded-full animate-gradient-shift accent-gradient opacity-100 shadow-[0_0_20px_rgba(137,170,204,0.4)]" />
+          <span className="relative bg-white text-black px-6 py-2 rounded-full text-sm font-medium">
+            View — <span className="font-display italic text-base ml-1">{project.title}</span>
+          </span>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function SelectedWorks() {
   return (
@@ -43,44 +108,25 @@ export default function SelectedWorks() {
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
-          {PROJECTS.map((project, i) => {
-            const isWide = i === 0 || i === 3;
-            const spanClass = isWide ? "md:col-span-7" : "md:col-span-5";
+        <div className="relative">
+          {/* Figma bounding box markers for the entire grid */}
+          <div className="absolute -top-4 -left-4 w-4 h-4 border-t-2 border-l-2 border-[#0d99ff] opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          <div className="absolute -top-4 -right-4 w-4 h-4 border-t-2 border-r-2 border-[#0d99ff] opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          <div className="absolute -bottom-4 -left-4 w-4 h-4 border-b-2 border-l-2 border-[#0d99ff] opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          <div className="absolute -bottom-4 -right-4 w-4 h-4 border-b-2 border-r-2 border-[#0d99ff] opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          
+          <div className="absolute -top-12 right-0 flex items-center gap-2 px-2 py-1 bg-[#0d99ff]/20 border border-[#0d99ff]/50 rounded-[4px] opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-default">
+            <span className="text-[10px] text-[#0d99ff] font-mono tracking-wider">Auto Layout (Wrap)</span>
+          </div>
 
-            return (
-              <div 
-                key={project.id}
-                className={`${spanClass} group relative bg-surface border border-stroke rounded-3xl overflow-hidden aspect-square md:aspect-auto md:h-[450px] cursor-pointer`}
-              >
-                {/* Base Image */}
-                <img 
-                  src={project.img} 
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[0.25,0.1,0.25,1] group-hover:scale-105"
-                />
-                
-                {/* Halftone Overlay */}
-                <div 
-                  className="absolute inset-0 opacity-20 mix-blend-multiply"
-                  style={{ backgroundImage: "radial-gradient(circle, #000 1px, transparent 1px)", backgroundSize: "4px 4px" }}
-                />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6" style={{ perspective: "1000px" }}>
+            {PROJECTS.map((project, i) => {
+              const isWide = i === 0 || i === 3;
+              const spanClass = isWide ? "md:col-span-7" : "md:col-span-5";
 
-                {/* Hover Darken + Blur */}
-                <div className="absolute inset-0 bg-bg/70 opacity-0 group-hover:opacity-100 backdrop-blur-lg transition-all duration-500 flex items-center justify-center">
-                  
-                  {/* Pill Label */}
-                  <div className="relative inline-flex items-center justify-center rounded-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[0.25,0.1,0.25,1]">
-                    <span className="absolute inset-[-2px] rounded-full animate-gradient-shift accent-gradient opacity-100" />
-                    <span className="relative bg-white text-black px-6 py-2 rounded-full text-sm font-medium">
-                      View — <span className="font-display italic text-base ml-1">{project.title}</span>
-                    </span>
-                  </div>
-
-                </div>
-              </div>
-            );
-          })}
+              return <TiltCard key={project.id} project={project} spanClass={spanClass} />;
+            })}
+          </div>
         </div>
 
       </div>
