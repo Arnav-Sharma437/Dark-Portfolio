@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const PROJECTS = [
-  { id: 1, title: "Automotive Motion", img: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" },
-  { id: 2, title: "Urban Architecture", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" },
-  { id: 3, title: "Human Perspective", img: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80" },
-  { id: 4, title: "Brand Identity", img: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80" },
+  { id: 1, title: "Shopify E-Commerce", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" },
+  { id: 2, title: "Squarespace Studio", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
+  { id: 3, title: "WordPress Headless", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" },
+  { id: 4, title: "Webflow Corporate", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" },
 ];
 
 export default function SelectedWorks() {

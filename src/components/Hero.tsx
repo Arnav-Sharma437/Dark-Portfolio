@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import Hls from "hls.js";
 
-const ROLES = ["Creative", "Fullstack", "Founder", "Scholar"];
+const ROLES = ["Design", "Development", "Performance", "Strategy"];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -77,11 +77,11 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto pt-20">
         
         <div className="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">
-          COLLECTION '26
+          DIGITAL AGENCY
         </div>
         
         <h1 className="name-reveal text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6">
-          Michael Smith
+          Pixxelu
         </h1>
         
         <div className="blur-in text-xl md:text-3xl text-text-primary mb-6 flex items-center justify-center gap-2 font-body">
@@ -92,11 +92,11 @@ export default function Hero() {
           >
             {ROLES[roleIndex]}
           </span>
-          <span>lives in Chicago.</span>
+          <span>Agency based in India.</span>
         </div>
         
         <p className="blur-in text-sm md:text-base text-muted max-w-md mx-auto mb-12">
-          Designing seamless digital interactions by focusing on the unique nuances which bring systems to life.
+          Building high-performance websites and bespoke digital experiences natively integrated with AI workflows.
         </p>
         
         {/* CTA Buttons */}

@@ -1,8 +1,8 @@
 export default function Stats() {
   const STATS = [
-    { value: "20+", label: "Years Experience" },
-    { value: "95+", label: "Projects Done" },
-    { value: "200%", label: "Satisfied Clients" },
+    { value: "50+", label: "Sites Launched" },
+    { value: "4", label: "Platforms Mastered" },
+    { value: "5.0", label: "Average Rating" },
   ];
 
   return (

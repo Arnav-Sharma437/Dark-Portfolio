@@ -78,14 +78,14 @@ export default function ParallaxGallery() {
         <div ref={centerRef} className="absolute inset-0 h-screen w-full flex flex-col justify-center items-center text-center z-10 pointer-events-none px-4">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-stroke" />
-            <span className="text-xs text-muted uppercase tracking-[0.3em]">Explorations</span>
+            <span className="text-xs text-muted uppercase tracking-[0.3em]">Process</span>
             <div className="w-8 h-px bg-stroke" />
           </div>
           <h2 className="text-5xl md:text-7xl lg:text-8xl tracking-tight text-text-primary mb-6 font-body font-light">
-            Visual <span className="font-display italic text-text-primary">playground</span>
+            How we <span className="font-display italic text-text-primary">work</span>
           </h2>
           <p className="text-muted text-sm md:text-base max-w-sm mx-auto mb-8">
-            A collection of unused concepts, motion tests, and visual experiments from the archives.
+            From wireframes to final deployment, we build scalable platforms with a relentless focus on performance and conversion.
           </p>
           <a href="#" className="pointer-events-auto group relative inline-flex items-center justify-center rounded-full">
             <span className="absolute inset-[-1px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300" />

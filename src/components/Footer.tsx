@@ -65,38 +65,13 @@ export default function Footer() {
         </div>
 
         {/* CTA Button */}
-        <div className="mb-24 md:mb-32">
-          <a href="mailto:hello@michaelsmith.com" className="group relative inline-flex items-center justify-center rounded-full">
+        <div className="mb-16 md:mb-24">
+          <a href="mailto:hello@pixxelu.com" className="group relative inline-flex items-center justify-center rounded-full">
             <span className="absolute inset-[-2px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300" />
             <span className="relative flex items-center justify-center bg-surface border border-stroke group-hover:border-transparent rounded-full px-8 py-4 md:px-12 md:py-6 text-xl md:text-3xl font-display italic text-text-primary backdrop-blur-md transition-colors">
-              hello@michaelsmith.com <span className="ml-3 text-base">↗</span>
+              hello@pixxelu.com <span className="ml-3 text-base">↗</span>
             </span>
           </a>
-        </div>
-
-        {/* Footer Bar */}
-        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-          
-          <div className="flex items-center gap-2 bg-surface/50 border border-stroke rounded-full px-4 py-2 backdrop-blur-sm">
-            <div className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </div>
-            <span className="text-xs text-muted uppercase tracking-widest">Available for projects</span>
-          </div>
-
-          <div className="flex items-center gap-6">
-            {["Twitter", "LinkedIn", "Dribbble", "GitHub"].map((link) => (
-              <a key={link} href="#" className="text-xs text-muted hover:text-text-primary transition-colors uppercase tracking-widest">
-                {link}
-              </a>
-            ))}
-          </div>
-
-          <div className="text-xs text-stroke uppercase tracking-widest">
-            © {new Date().getFullYear()} Michael Smith
-          </div>
-
         </div>
       </div>
     </footer>

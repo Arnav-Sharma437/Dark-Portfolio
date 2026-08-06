@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const ENTRIES = [
-  { id: 1, title: "The nuances of motion design", date: "Oct 12", time: "5 min read", img: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=150&q=80" },
-  { id: 2, title: "Building scalable design systems", date: "Sep 28", time: "8 min read", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=150&q=80" },
-  { id: 3, title: "Why typography matters most", date: "Sep 15", time: "4 min read", img: "https://images.unsplash.com/photo-1507238692062-5a042e9e18c4?auto=format&fit=crop&w=150&q=80" },
-  { id: 4, title: "The future of web interactions", date: "Aug 02", time: "6 min read", img: "https://images.unsplash.com/photo-1542744094-24638ea0b3b5?auto=format&fit=crop&w=150&q=80" },
+  { id: 1, title: "Custom CMS Mastery", date: "WordPress", time: "Shopify", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=150&q=80" },
+  { id: 2, title: "High-Performance Dev", date: "React", time: "Next.js", img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=150&q=80" },
+  { id: 3, title: "UI/UX Engineering", date: "Figma", time: "Design", img: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=150&q=80" },
+  { id: 4, title: "Brand Identity", date: "Guidelines", time: "Strategy", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=150&q=80" },
 ];
 
 export default function Journal() {
@@ -23,13 +23,13 @@ export default function Journal() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-stroke" />
-              <span className="text-xs text-muted uppercase tracking-[0.3em]">Journal</span>
+              <span className="text-xs text-muted uppercase tracking-[0.3em]">Services</span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-text-primary mb-4 font-body font-light">
-              Recent <span className="font-display italic text-text-primary">thoughts</span>
+              What we <span className="font-display italic text-text-primary">do</span>
             </h2>
             <p className="text-muted text-sm md:text-base max-w-md">
-              Articles and essays on design, engineering, and the creative process.
+              We engineer pixel-perfect frontends and completely bespoke platforms.
             </p>
           </div>
           
