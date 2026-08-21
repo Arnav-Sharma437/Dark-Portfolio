@@ -1,10 +1,10 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const PROJECTS = [
-  { id: 1, title: "Shopify E-Commerce", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" },
-  { id: 2, title: "Squarespace Studio", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
-  { id: 3, title: "WordPress Headless", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" },
-  { id: 4, title: "Webflow Corporate", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" },
+  { id: 1, title: "Wix E-Commerce Suite", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" },
+  { id: 2, title: "Zenith Brand Identity", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" },
+  { id: 3, title: "Apex SEO Growth", img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80" },
+  { id: 4, title: "Real Estate Wix Studio", img: "https://images.unsplash.com/photo-1547658719-da2b8116c1d0?auto=format&fit=crop&w=800&q=80" },
 ];
 
 function TiltCard({ project, spanClass }: { project: typeof PROJECTS[0], spanClass: string }) {
@@ -94,7 +94,7 @@ export default function SelectedWorks() {
               Featured <span className="font-display italic text-text-primary">projects</span>
             </h2>
             <p className="text-muted text-sm md:text-base max-w-md">
-              A selection of projects I've worked on, from concept to launch.
+              A curated showcase of bespoke Wix website designs, visual identities, and high-impact SEO campaigns.
             </p>
           </div>
           

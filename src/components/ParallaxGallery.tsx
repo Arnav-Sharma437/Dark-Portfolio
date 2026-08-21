@@ -94,7 +94,7 @@ export default function ParallaxGallery() {
             How we <span className="font-display italic text-text-primary">work</span>
           </h2>
           <p className="text-muted text-sm md:text-base max-w-sm mx-auto mb-8">
-            From wireframes to final deployment, we build scalable platforms with a relentless focus on performance and conversion.
+            From initial wireframes and visual design to custom Wix Studio deployment and SEO optimization, we craft high-ranking digital experiences.
           </p>
           <a href="#" className="pointer-events-auto group relative inline-flex items-center justify-center rounded-full">
             <span className="absolute inset-[-1px] rounded-full opacity-0 group-hover:opacity-100 animate-gradient-shift accent-gradient transition-opacity duration-300" />

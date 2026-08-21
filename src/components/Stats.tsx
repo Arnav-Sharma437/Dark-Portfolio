@@ -1,8 +1,8 @@
 export default function Stats() {
   const STATS = [
-    { value: "50+", label: "Sites Launched" },
-    { value: "4", label: "Platforms Mastered" },
-    { value: "5.0", label: "Average Rating" },
+    { value: "80+", label: "Wix Sites Launched" },
+    { value: "140%", label: "Avg SEO Traffic Increase" },
+    { value: "5.0", label: "Wix Arena Rating" },
   ];
 
   return (

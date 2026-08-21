@@ -1,10 +1,10 @@
 import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 
 const ENTRIES = [
-  { id: 1, title: "Custom CMS Mastery", date: "WordPress", time: "Shopify", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=150&q=80" },
-  { id: 2, title: "High-Performance Dev", date: "React", time: "Next.js", img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=150&q=80" },
-  { id: 3, title: "UI/UX Engineering", date: "Figma", time: "Design", img: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=150&q=80" },
-  { id: 4, title: "Brand Identity", date: "Guidelines", time: "Strategy", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=150&q=80" },
+  { id: 1, title: "Wix Custom Development", date: "Studio", time: "Velo API", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=150&q=80" },
+  { id: 2, title: "Graphic & Brand Design", date: "Identity", time: "Creative", img: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=150&q=80" },
+  { id: 3, title: "Search Engine Optimization", date: "Ranking", time: "Audits", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=150&q=80" },
+  { id: 4, title: "Wix E-Commerce & CRO", date: "Conversion", time: "Stores", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=150&q=80" },
 ];
 
 function GlowRow({ entry }: { entry: typeof ENTRIES[0] }) {
@@ -72,7 +72,7 @@ export default function Journal() {
               What we <span className="font-display italic text-text-primary">do</span>
             </h2>
             <p className="text-muted text-sm md:text-base max-w-md">
-              We engineer pixel-perfect frontends and completely bespoke platforms.
+              We design stunning visuals, develop powerful Wix websites, and optimize them to dominate search engines.
             </p>
           </div>
           

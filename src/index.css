@@ -2,12 +2,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: hsl(0 0% 4%);
-  --color-surface: hsl(0 0% 8%);
+  --color-bg: hsl(240 10% 3%);
+  --color-surface: hsl(240 8% 6%);
   --color-text-primary: hsl(0 0% 96%);
-  --color-muted: hsl(0 0% 53%);
-  --color-stroke: hsl(0 0% 12%);
-  --color-accent: hsl(0 0% 96%);
+  --color-muted: hsl(240 4% 60%);
+  --color-stroke: hsl(240 6% 12%);
+  --color-accent: hsl(260 80% 70%);
 
   --font-body: "Inter", sans-serif;
   --font-display: "Instrument Serif", serif;
@@ -32,12 +32,12 @@
 }
 
 :root {
-  --bg: 0 0% 4%;
-  --surface: 0 0% 8%;
+  --bg: 240 10% 3%;
+  --surface: 240 8% 6%;
   --text: 0 0% 96%;
-  --muted: 0 0% 53%;
-  --stroke: 0 0% 12%;
-  --accent: 0 0% 96%;
+  --muted: 240 4% 60%;
+  --stroke: 240 6% 12%;
+  --accent: 260 80% 70%;
 }
 
 body {
@@ -47,7 +47,8 @@ body {
 }
 
 .accent-gradient {
-  background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #10b981 100%);
+  background-size: 200% 200%;
 }
 
 .blur-in {

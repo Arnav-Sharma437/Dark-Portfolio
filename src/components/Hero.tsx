@@ -4,7 +4,12 @@ import Hls from "hls.js";
 import { motion } from "framer-motion";
 import useMagnetic from "../hooks/useMagnetic";
 
-const ROLES = ["Design", "Development", "Performance", "Strategy"];
+const ROLES = [
+  "Wix Website Design & Dev",
+  "Creative Graphic Design",
+  "SEO & Search Strategy",
+  "Custom Wix Velo Solutions"
+];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -87,7 +92,7 @@ export default function Hero() {
         </div>
 
         <div className="blur-in relative inline-block text-xs text-muted uppercase tracking-[0.3em] mb-8">
-          DIGITAL AGENCY
+          STUDIO PORTFOLIO
           {/* Measurement line */}
           <div className="absolute top-1/2 -right-16 w-12 h-px bg-[#0d99ff]/50 border-r border-[#0d99ff]/50" />
           <div className="absolute top-1/2 -left-16 w-12 h-px bg-[#0d99ff]/50 border-l border-[#0d99ff]/50" />
@@ -106,19 +111,18 @@ export default function Hero() {
           </div>
         </div>
         
-        <div className="blur-in text-xl md:text-3xl text-text-primary mb-6 flex items-center justify-center gap-2 font-body">
-          <span>A</span>
+        <div className="blur-in text-xl md:text-3xl text-text-primary mb-6 flex flex-wrap items-center justify-center gap-2 font-body">
+          <span>Specializing in</span>
           <span 
             key={roleIndex} 
             className="font-display italic text-text-primary animate-role-fade-in inline-block"
           >
             {ROLES[roleIndex]}
           </span>
-          <span>Agency based in India.</span>
         </div>
         
         <p className="blur-in text-sm md:text-base text-muted max-w-md mx-auto mb-12">
-          Building high-performance websites and bespoke digital experiences natively integrated with AI workflows.
+          Crafting high-converting Wix websites, bespoke visual branding, and search engine optimization strategies that drive real organic growth.
         </p>
         
         {/* CTA Buttons */}
