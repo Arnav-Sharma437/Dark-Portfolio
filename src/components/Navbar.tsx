@@ -25,7 +25,7 @@ export default function Navbar() {
         >
           <div className="absolute inset-0 rounded-full animate-gradient-shift accent-gradient opacity-80 group-hover:opacity-100" />
           <div className="absolute inset-[1px] rounded-full bg-bg flex items-center justify-center">
-            <span className="font-display italic text-[13px] text-text-primary mt-[2px]">JA</span>
+            <span className="font-display italic text-[13px] text-text-primary mt-[2px]">SS</span>
           </div>
         </a>
 

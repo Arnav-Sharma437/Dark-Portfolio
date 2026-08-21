@@ -65,7 +65,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
     >
       {/* Top Left Label */}
       <div ref={topLabelRef} className="text-xs text-muted uppercase tracking-[0.3em]">
-        PIXXELU
+        SHUBHAM SIYAL
       </div>
 
       {/* Center Rotating Words */}

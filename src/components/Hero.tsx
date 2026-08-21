@@ -6,9 +6,9 @@ import useMagnetic from "../hooks/useMagnetic";
 
 const ROLES = [
   "Wix Website Design & Dev",
-  "Creative Graphic Design",
+  "Figma UI/UX Design",
   "SEO & Search Strategy",
-  "Custom Wix Velo Solutions"
+  "Graphic & Brand Design"
 ];
 
 export default function Hero() {
@@ -100,7 +100,7 @@ export default function Hero() {
         
         <div className="relative group/title">
           <h1 className="name-reveal text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6 transition-all duration-500 hover:text-white hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-            Pixxelu
+            Shubham Siyal
           </h1>
           {/* Hover selection box */}
           <div className="absolute inset-[-10px] border border-[#0d99ff] opacity-0 group-hover/title:opacity-100 transition-opacity pointer-events-none rounded-lg flex items-start justify-start">
