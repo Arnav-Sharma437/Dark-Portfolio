@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import CodeBanner from "./components/CodeBanner";
 import SelectedWorks from "./components/SelectedWorks";
 import Journal from "./components/Journal";
 import ParallaxGallery from "./components/ParallaxGallery";
@@ -40,7 +39,6 @@ function App() {
           <Navbar />
           <main>
             <Hero />
-            <CodeBanner />
             <SelectedWorks />
             <Journal />
             <ParallaxGallery />

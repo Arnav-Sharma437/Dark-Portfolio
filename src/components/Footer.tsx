@@ -4,31 +4,7 @@ import Hls from "hls.js";
 import { motion } from "framer-motion";
 import useMagnetic from "../hooks/useMagnetic";
 
-const CODE_DATA = JSON.stringify({
-  model: {
-    shapegen: "tencent/Hunyuan3D-2/hunyuan3d-dit-v2-0",
-    texgen: "tencent/Hunyuan3D-2"
-  },
-  params: {
-    caption: "",
-    steps: 30,
-    guidance_scale: 5,
-    seed: 5856855,
-    octree_resolution: 256,
-    check_box_rembg: true,
-    num_chunks: 8000
-  },
-  number_of_faces: 777826,
-  number_of_vertices: 261836,
-  time: {
-    "remove background": 0.9953069686889648,
-    "shape generation": 6.522051095962524,
-    "export to trimesh": 0.12373185157775879,
-    "total": 7.643625736236572
-  }
-});
-
-const MARQUEE_TEXT = Array(6).fill(CODE_DATA).join("   ///   ");
+const MARQUEE_TEXT = Array(10).fill("BUILDING THE FUTURE • ").join("");
 
 export default function Footer() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -85,8 +61,8 @@ export default function Footer() {
       <div className="relative z-10 flex flex-col items-center justify-center">
         
         {/* Animated Marquee */}
-        <div className="w-full overflow-hidden flex whitespace-nowrap mb-16 md:mb-24 opacity-30">
-          <div ref={marqueeRef} className="text-xl md:text-3xl font-mono tracking-widest text-text-primary">
+        <div className="w-full overflow-hidden flex whitespace-nowrap mb-16 md:mb-24 opacity-20">
+          <div ref={marqueeRef} className="text-6xl md:text-9xl font-display italic tracking-tight text-text-primary">
             {MARQUEE_TEXT}
           </div>
         </div>
